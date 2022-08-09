@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"test": "vitest",
+		"test": "vitest run",
 		"coverage": "vitest run --coverage",
 		"preview": "vite preview",
 		"lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
@@ -46,6 +46,8 @@
 		"vitest": "0.21.0"
 	},
 	"lint-staged": {
-		"**/*": "prettier --write --ignore-unknown"
+		"*.{js,jsx,ts,tsx,json,css,scss,md}": "npm run lint",
+		"*.css": "npm run stylelint",
+		"**/*.{js,jsx,ts,tsx,json,css,scss,md}": "npm run format"
 	}
 }
